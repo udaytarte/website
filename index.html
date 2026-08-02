@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elite Digital Industries | CAD Service Provider</title>
   <meta name="description"
-    content="Elite Digital Industries is an CAD Service Provider delivering software implementation, system integratio,software upgrades, and consulting.">
+    content="Elite Digital Industries is a CAD service provider delivering software implementation, system integration, software upgrades, and consulting for engineering and design teams.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
@@ -351,7 +351,10 @@
 
     /* ---------- hero ---------- */
     .hero {
-      background: radial-gradient(ellipse at 20% -10%, #142e4a 0%, var(--navy) 55%);
+      background:
+        radial-gradient(ellipse at 20% -10%, rgba(20, 46, 74, 0.82) 0%, rgba(11, 31, 51, 0.96) 55%),
+        linear-gradient(180deg, rgba(11, 31, 51, 0.93) 0%, rgba(11, 31, 51, 0.98) 100%),
+        url('https://images.unsplash.com/photo-1600869009498-8d429f88d4f5?q=80&w=1800&auto=format&fit=crop') center 35% / cover no-repeat;
       color: #fff;
       overflow: hidden;
       padding: 88px 0 70px;
@@ -667,15 +670,43 @@
 
     .industry-card {
       border: 1px solid var(--line-light);
-      padding: 28px 22px;
       background: #fff;
+      overflow: hidden;
     }
 
-    .industry-card .icon {
-      width: 40px;
-      height: 40px;
-      color: var(--amber-dim);
-      margin-bottom: 20px;
+    .industry-card-img {
+      position: relative;
+      height: 160px;
+      background: var(--paper-2);
+    }
+
+    .industry-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .industry-card-icon {
+      position: absolute;
+      left: 18px;
+      bottom: -18px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy);
+      border: 1px solid var(--line-darker);
+      color: var(--amber);
+    }
+
+    .industry-card-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .industry-card-body {
+      padding: 30px 22px 24px;
     }
 
     .industry-card h4 {
@@ -685,6 +716,88 @@
 
     .industry-card p {
       margin-top: 8px;
+      font-size: 13.5px;
+      color: var(--steel-dim);
+    }
+
+    /* ---------- capability ---------- */
+    .capability {
+      background: var(--paper-2);
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    @media (max-width:900px) {
+      .capability-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .capability-media {
+      position: relative;
+    }
+
+    .capability-media img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border: 1px solid var(--line-light-2);
+    }
+
+    @media (max-width:600px) {
+      .capability-media img {
+        height: 280px;
+      }
+    }
+
+    .capability-media-tag {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      background: var(--navy);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 9px 14px;
+      border: 1px solid var(--line-darker);
+    }
+
+    .capability-points {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .capability-point {
+      display: flex;
+      gap: 14px;
+    }
+
+    .capability-point .dot {
+      width: 8px;
+      height: 8px;
+      margin-top: 7px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    .capability-point h5 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 14.5px;
+      color: var(--ink);
+    }
+
+    .capability-point p {
+      margin-top: 4px;
       font-size: 13.5px;
       color: var(--steel-dim);
     }
@@ -991,7 +1104,7 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">CAD SERVICE</div>
-          <h1>We implement, integrate, and support the <em>CAD  stack</em> your teams build on.</h1>
+          <h1>We implement, integrate, and support the <em>CAD stack</em> your teams build on.</h1>
           <p class="lead">Elite Digital Industries helps architecture, engineering, construction, and manufacturing
             organizations deploy CAD software correctly the first time &mdash; then keeps it licensed, updated, and
             running for as long as you need it.</p>
@@ -1014,7 +1127,7 @@
             <div class="titleblock-row">
               <div class="titleblock-cell">
                 <div class="k">Core Services</div>
-                <div class="v">Implementation / Integration / Support / Consulting & Support</div>
+                <div class="v">Implementation / Integration / Licensing / Consulting</div>
               </div>
               <div class="titleblock-cell">
                 <div class="k">Coverage</div>
@@ -1117,7 +1230,7 @@
               <path d="M8 7l7.5 9.5M16 7L9 16" />
             </svg>
             <h3>System Integration</h3>
-            <p>Connecting CAD platforms with your PLM, and project management systems for a single, reliable
+            <p>Connecting CAD platforms with your PLM and project management systems for a single, reliable
               source of truth.</p>
           </div>
 
@@ -1127,9 +1240,9 @@
               <path d="M12 3l7 3v6c0 5-3.2 8-7 9-3.8-1-7-4-7-9V6l7-3Z" />
               <path d="M9 12l2 2 4-4" />
             </svg>
-            <h3>Consulting &amp; Management</h3>
-            <p> Consulting and softwares implementation, named-user and  renewals support, and compliance audits
-              handled on your behalf.</p>
+            <h3>Licensing &amp; Compliance</h3>
+            <p>Named-user and subscription renewals, seat management, and compliance audits handled on your
+              behalf.</p>
           </div>
 
           <div class="service-card">
@@ -1184,7 +1297,7 @@
         <div class="process-step">
           <div class="n mono">STAGE 01</div>
           <h4>Discovery &amp; Assessment</h4>
-          <p>We map current tools, workflows, and system  posture before recommending anything.</p>
+          <p>We map current tools, workflows, and system posture before recommending anything.</p>
         </div>
         <div class="process-step">
           <div class="n mono">STAGE 02</div>
@@ -1204,7 +1317,7 @@
         <div class="process-step">
           <div class="n mono">STAGE 05</div>
           <h4>Ongoing Care</h4>
-          <p> Software management, updates, and consulting on a continuing basis.</p>
+          <p>Software licensing, updates, and consulting on a continuing basis.</p>
         </div>
       </div>
     </section>
@@ -1221,20 +1334,114 @@
         <div class="industries-grid">
 
           <div class="industry-card">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-              <circle cx="12" cy="12" r="3" />
-              <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" />
-            </svg>
-            <h4>Manufacturing &amp; Product Design</h4>
-            <p>Fusion and product data management implementations for design and engineering teams.</p>
+            <div class="industry-card-img">
+              <img src="https://images.unsplash.com/photo-1717386255773-1e3037c81788?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                alt="Manufacturing floor with large-scale production equipment" loading="lazy">
+              <span class="industry-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" />
+                </svg>
+              </span>
+            </div>
+            <div class="industry-card-body">
+              <h4>Manufacturing &amp; Product Design</h4>
+              <p>Fusion and product data management implementations for design and engineering teams.</p>
+            </div>
           </div>
+
           <div class="industry-card">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-              <path d="M3 18l6-11 4 7 3-5 5 9" />
-              <path d="M3 21h18" />
-            </svg>
-            <h4>Mechanical </h4>
-            <p>Large-scale Mechanical design environments, data integration, and standards enforcement.</p>
+            <div class="industry-card-img">
+              <img src="https://images.unsplash.com/photo-1647427060118-4911c9821b82?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                alt="Industrial machinery on a factory production line" loading="lazy">
+              <span class="industry-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M3 18l6-11 4 7 3-5 5 9" />
+                  <path d="M3 21h18" />
+                </svg>
+              </span>
+            </div>
+            <div class="industry-card-body">
+              <h4>Mechanical Engineering</h4>
+              <p>Large-scale mechanical design environments, data integration, and standards enforcement.</p>
+            </div>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-card-img">
+              <img src="https://images.unsplash.com/photo-1608303588026-884930af2559?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                alt="Team reviewing architectural blueprints on a desk" loading="lazy">
+              <span class="industry-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M4 21V9l8-5 8 5v12" />
+                  <path d="M9 21v-6h6v6" />
+                  <path d="M4 21h16" />
+                </svg>
+              </span>
+            </div>
+            <div class="industry-card-body">
+              <h4>Architecture, Engineering &amp; Construction</h4>
+              <p>BIM and drawing-management workflows for AEC firms, from concept models to construction documentation.</p>
+            </div>
+          </div>
+
+          <div class="industry-card">
+            <div class="industry-card-img">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                alt="Engineer drafting an infrastructure plan" loading="lazy">
+              <span class="industry-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M2 16c3-6 6-6 6 0M8 16c3-6 6-6 6 0M14 16c3-6 6-6 6 0" />
+                  <path d="M2 20h20" />
+                </svg>
+              </span>
+            </div>
+            <div class="industry-card-body">
+              <h4>Infrastructure &amp; Civil Engineering</h4>
+              <p>Civil design and infrastructure planning environments, built around accurate, versioned drawing sets.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITY -->
+    <section class="section-pad capability" id="capability">
+      <div class="wrap capability-grid">
+        <div class="capability-media">
+          <img src="https://images.unsplash.com/photo-1744627049721-73c27008ad28?q=80&amp;w=1400&amp;auto=format&amp;fit=crop"
+            alt="Engineers collaborating on a CAD implementation" loading="lazy">
+          <div class="capability-media-tag mono">ON-SITE + REMOTE DELIVERY</div>
+        </div>
+        <div>
+          <div class="eyebrow" style="color:var(--amber-dim);">Why Partner With Us</div>
+          <h2>The discipline of a systems integrator. The responsiveness of a dedicated team.</h2>
+          <p style="margin-top:16px; font-size:16px; color:var(--steel-dim);">Every engagement runs against a
+            documented plan, a named engagement lead, and a support desk that actually answers &mdash; not a
+            rotating queue of tickets.</p>
+          <div class="capability-points">
+            <div class="capability-point">
+              <span class="dot"></span>
+              <div>
+                <h5>Single point of accountability</h5>
+                <p>One engagement lead owns your rollout end to end, across every vendor conversation.</p>
+              </div>
+            </div>
+            <div class="capability-point">
+              <span class="dot"></span>
+              <div>
+                <h5>Documented process, every time</h5>
+                <p>Discovery, design, and go-live are run against the same fixed playbook regardless of scale.</p>
+              </div>
+            </div>
+            <div class="capability-point">
+              <span class="dot"></span>
+              <div>
+                <h5>Cross-platform integration expertise</h5>
+                <p>CAD environments connected cleanly to the PLM and project systems you already run on.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1246,7 +1453,7 @@
         <div class="stats-grid">
           <div class="stat">
             <div class="num mono">2+</div>
-            <div class="lbl">Years as an CAD Service Provider</div>
+            <div class="lbl">Years as a CAD Service Provider</div>
           </div>
           <div class="stat">
             <div class="num mono">50+</div>
@@ -1303,11 +1510,49 @@
               </svg>
               <div>
                 <div class="k">Headquarters</div>
-                <div class="v">Near Vaishnodevi Mandir, A-40,Waluj,MIDC, Chhatrapati Sambhajinagar(India)</div>
+                <div class="v">Near Vaishnodevi Mandir, A-40, Waluj, MIDC, Chhatrapati Sambhajinagar (India)</div>
               </div>
             </div>
           </div>
         </div>
+
+        <div>
+          <form id="contactForm" novalidate>
+            <div class="field">
+              <label for="cf-name">Full Name</label>
+              <input type="text" id="cf-name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="cf-email">Work Email</label>
+              <input type="email" id="cf-email" name="email" required>
+            </div>
+            <div class="field">
+              <label for="cf-company">Company</label>
+              <input type="text" id="cf-company" name="company">
+            </div>
+            <div class="field">
+              <label for="cf-interest">Area of Interest</label>
+              <select id="cf-interest" name="interest">
+                <option>Software Implementation</option>
+                <option>System Integration</option>
+                <option>Licensing &amp; Compliance</option>
+                <option>Software Update &amp; Upgrade</option>
+                <option>Consulting &amp; Advisory</option>
+                <option>Training &amp; Enablement</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cf-message">Project Brief</label>
+              <textarea id="cf-message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send
+              Message</button>
+            <div class="form-status mono" id="formStatus">Thanks &mdash; a solutions engineer will follow up
+              within one business day.</div>
+          </form>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -1324,7 +1569,7 @@
           <ul>
             <li><a href="#services">Implementation</a></li>
             <li><a href="#services">Integration</a></li>
-            <li><a href="#services"> Software Support</a></li>
+            <li><a href="#services">Software Support</a></li>
             <li><a href="#services">Consulting</a></li>
           </ul>
         </div>
@@ -1342,7 +1587,7 @@
           <ul>
             <li>contact@elitedigitalindustries.com</li>
             <li>+91 70405 08099</li>
-            <li>Near Vaishnodevi Mandir, A-40,Waluj,MIDC, Chhatrapati Sambhajinagar(India)</li>
+            <li>Near Vaishnodevi Mandir, A-40, Waluj, MIDC, Chhatrapati Sambhajinagar (India)</li>
           </ul>
         </div>
       </div>
